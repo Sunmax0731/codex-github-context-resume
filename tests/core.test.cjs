@@ -4,12 +4,13 @@ const { analyzeItems, renderMarkdownReport } = require('../src/core.cjs');
 
 test('valid sample passes required field checks', () => {
   const report = analyzeItems({ items: [{
-  "id": "codex-context-1",
-  "title": "起動・復帰・Codex/GitHub文脈管理 サンプル 1",
+  "id": "codex-github-context-resume-1",
+  "title": "Codex/GitHub文脈再開支援 サンプル1",
+  "status": "ready",
   "workspace": "D:\\AI\\VSCodeExtension\\codex-github-context-resume",
   "issue": "#1",
   "branch": "main",
-  "resumeNote": "次は検証ログを確認する"
+  "resumeNote": "次回は検証ログから再開する"
 }] });
   assert.equal(report.summary.result, 'passed');
   assert.equal(report.summary.errors, 0);
@@ -17,11 +18,12 @@ test('valid sample passes required field checks', () => {
 
 test('missing required field is reported', () => {
   const report = analyzeItems({ items: [{
-  "id": "codex-context-missing-required",
+  "id": "codex-github-context-resume-missing-required",
   "title": "必須項目不足サンプル",
+  "status": "ready",
   "issue": "#1",
   "branch": "main",
-  "resumeNote": "次は検証ログを確認する"
+  "resumeNote": "次回は検証ログから再開する"
 }] });
   assert.equal(report.summary.result, 'failed');
   assert.equal(report.summary.errors, 1);

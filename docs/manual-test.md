@@ -2,21 +2,22 @@
 
 ## 準備
 
-- Visual Studio Code を使用する。
-- リポジトリパス: `D:\AI\VSCodeExtension\codex-github-context-resume`
-- ローカルサーバーは不要。
+- リポジトリ: `D:\AI\VSCodeExtension\codex-github-context-resume`
+- `npm test` が成功していること
+- VS Codeが必要です
+- 起動コマンド: `code --extensionDevelopmentPath="D:\AI\VSCodeExtension\codex-github-context-resume"`
+- ローカルサーバーは不要です
 
 ## 手順
 
-1. PowerShellで `cd D:\AI\VSCodeExtension\codex-github-context-resume` を実行する。
-2. `npm test` が成功することを確認する。
-3. `code D:\AI\VSCodeExtension\codex-github-context-resume` で VS Code を開く。
-4. `Run Extension` 構成で Extension Development Host を起動する。
-5. Command Palette から `起動・復帰・Codex/GitHub文脈管理: レビューを開く` を実行する。
-6. Webviewに sample result が表示されることを確認する。
+1. PowerShellで `code --extensionDevelopmentPath="D:\AI\VSCodeExtension\codex-github-context-resume"` を実行する
+2. Extension Development Hostでコマンドパレットを開く
+3. `Codex/GitHub文脈再開支援: レビューを開く` を実行する
+4. WebviewにステータスカードとFindingsが表示されることを確認する
+5. Status Barに状態が一時表示されることを確認する
 
 ## 期待結果
 
-- Extension Development Host が起動できる。
-- コマンド実行でレビューWebviewが開く。
-- 必須項目チェックの結果が日本語で読める。
+- 必須項目不足が分かる形で表示される。
+- 次アクションがユーザーに理解できる。
+- 実行ログ、出力ファイル、または画面表示をリリース前確認に使える。
