@@ -1,0 +1,29 @@
+{
+  "name": "codex-github-context-resume",
+  "displayName": "起動・復帰・Codex/GitHub文脈管理",
+  "version": "0.1.0",
+  "publisher": "sunmax0731",
+  "private": false,
+  "description": "VS Code上でCodex/GitHub作業の再開文脈を確認し、次アクションを整理する。",
+  "main": "./extension.js",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "activationEvents": [
+    "onCommand:codex-github-context-resume.openReview"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "codex-github-context-resume.openReview",
+        "title": "起動・復帰・Codex/GitHub文脈管理: レビューを開く"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "validate": "npm test"
+  },
+  "devDependencies": {},
+  "license": "MIT"
+}
