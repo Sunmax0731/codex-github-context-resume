@@ -1,0 +1,120 @@
+{
+  "product": "codex-github-context-resume",
+  "title": "Codex/GitHub文脈再開支援",
+  "benchmarkRepos": [
+    "Sunmax0731/movie-telop-transcriber",
+    "Sunmax0731/codex-remote-android"
+  ],
+  "requiredFields": [
+    "workspace",
+    "issue",
+    "branch",
+    "resumeNote"
+  ],
+  "scenarios": [
+    {
+      "id": "happy-path",
+      "purpose": "VS Code内のIssue、ブランチ、再開メモ、作業文脈の正常入力を確認する",
+      "input": {
+        "items": [
+          {
+            "id": "codex-github-context-resume-happy",
+            "title": "Codex/GitHub文脈再開支援 happy",
+            "workspace": "D:\\AI\\VSCodeExtension\\codex-github-context-resume",
+            "issue": "#1",
+            "branch": "main",
+            "resumeNote": "次回は検証ログから再開する",
+            "status": "ready"
+          }
+        ]
+      },
+      "expected": {
+        "result": "passed",
+        "errors": 0,
+        "warnings": 0
+      }
+    },
+    {
+      "id": "missing-required",
+      "purpose": "必須項目不足をerrorとして検出する",
+      "input": {
+        "items": [
+          {
+            "id": "codex-github-context-resume-missing-required",
+            "title": "Codex/GitHub文脈再開支援 missing-required",
+            "issue": "#1",
+            "branch": "main",
+            "resumeNote": "次回は検証ログから再開する",
+            "status": "ready"
+          }
+        ]
+      },
+      "expected": {
+        "result": "failed",
+        "errors": 1,
+        "warnings": 0
+      }
+    },
+    {
+      "id": "blocked-status",
+      "purpose": "blocked状態をwarningとして検出する",
+      "input": {
+        "items": [
+          {
+            "id": "codex-github-context-resume-blocked",
+            "title": "Codex/GitHub文脈再開支援 blocked",
+            "workspace": "D:\\AI\\VSCodeExtension\\codex-github-context-resume",
+            "issue": "#1",
+            "branch": "main",
+            "resumeNote": "次回は検証ログから再開する",
+            "status": "blocked"
+          }
+        ]
+      },
+      "expected": {
+        "result": "warning",
+        "errors": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "id": "mixed-batch",
+      "purpose": "正常、必須不足、警告を同一バッチで集計する",
+      "input": {
+        "items": [
+          {
+            "id": "codex-github-context-resume-happy",
+            "title": "Codex/GitHub文脈再開支援 happy",
+            "workspace": "D:\\AI\\VSCodeExtension\\codex-github-context-resume",
+            "issue": "#1",
+            "branch": "main",
+            "resumeNote": "次回は検証ログから再開する",
+            "status": "ready"
+          },
+          {
+            "id": "codex-github-context-resume-missing-required",
+            "title": "Codex/GitHub文脈再開支援 missing-required",
+            "issue": "#1",
+            "branch": "main",
+            "resumeNote": "次回は検証ログから再開する",
+            "status": "ready"
+          },
+          {
+            "id": "codex-github-context-resume-blocked",
+            "title": "Codex/GitHub文脈再開支援 blocked",
+            "workspace": "D:\\AI\\VSCodeExtension\\codex-github-context-resume",
+            "issue": "#1",
+            "branch": "main",
+            "resumeNote": "次回は検証ログから再開する",
+            "status": "blocked"
+          }
+        ]
+      },
+      "expected": {
+        "result": "failed",
+        "errors": 1,
+        "warnings": 1
+      }
+    }
+  ]
+}
