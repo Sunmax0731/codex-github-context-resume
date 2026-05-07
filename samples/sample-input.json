@@ -1,16 +1,18 @@
 {
   "items": [
     {
-      "id": "codex-context-1",
+      "id": "codex-github-context-resume-1",
       "title": "起動・復帰・Codex/GitHub文脈管理 サンプル 1",
+      "status": "ready",
       "workspace": "D:\\AI\\VSCodeExtension\\codex-github-context-resume",
       "issue": "#1",
       "branch": "main",
       "resumeNote": "次は検証ログを確認する"
     },
     {
-      "id": "codex-context-missing-required",
+      "id": "codex-github-context-resume-missing-required",
       "title": "必須項目不足サンプル",
+      "status": "ready",
       "issue": "#1",
       "branch": "main",
       "resumeNote": "次は検証ログを確認する"
