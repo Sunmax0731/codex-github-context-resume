@@ -1,0 +1,11 @@
+{
+  "product": "codex-github-context-resume",
+  "title": "起動・復帰・Codex/GitHub文脈管理",
+  "domain": "VSCodeExtension",
+  "ideaNo": 3,
+  "platformType": "vscode-extension",
+  "expectedPublicTarget": "GitHub Release / VSIX",
+  "browser": null,
+  "android": null,
+  "evidence": "dist/platform-runtime-gate-result.json"
+}
